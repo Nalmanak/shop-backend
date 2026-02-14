@@ -284,6 +284,15 @@ app.post("/api/user/payement", async function(req, res) {
 })
 
 //////////////////////////////////////
+//              BACKUP              //
+//////////////////////////////////////
+
+app.get('/api/download', function(req, res){
+    const file = `./database.db`;
+    res.download(file);
+}); 
+
+//////////////////////////////////////
 
 app.listen(port, async function(){
     await getDBConnection();
